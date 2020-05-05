@@ -1,0 +1,20 @@
+{% extends 'log_sign/base.html' %}
+{% load static %}
+
+{% block title %}搜索{% endblock %}
+{% block css %}<link href="{% static 'css/search_from.css' %}" rel="stylesheet"/>{% endblock %}
+
+{% block content %}
+<div class="container">
+   <div class="img">
+   </div>
+    <div class="search">
+     {% csrf_token%}
+    <form action="/search_result/" method="post">
+<img src={% static "/img/xiaohui.png"  %} alt="">
+        <input type="text" name="q" placeholder="请输入搜索条件">
+        <button type="submit" value="搜索">搜索</button>
+    </form>
+    </div>
+</div>
+{% endblock %}
